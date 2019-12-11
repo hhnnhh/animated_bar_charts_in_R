@@ -5,12 +5,14 @@
 + names data chart: idea and concept, data preparation and analysis: https://github.com/hhnnhh (Hannah Bohle)
 
 
+## Read.me by hhnnhh: 
+
+The goal of this project is to visualise the frequency of the twenty most frequent **first names in Berlin** over the years 2012 to 2018. Female and male first names are visualised separately in animated bar plots. 
+
 ## Read.me by amrrs: 
+The goal of this project is explain how to build Animated Bar Charts in R (which is kinda trending on Social Media these days)
 
-The goal of this project is to visualise the frequency of the twenty most frequent first names in Berlin over the years 2012 to 2018. Female and male first names are visualised separately in animated bar plots. 
-##The goal of this project is explain how to build Animated Bar Charts in R ##(which is kinda trending on Social Media these days)
-
-##**Disclaimer:** The code used here is heaving borrowed (*You can say, ##inspired and copied*) from the answers of this Stack Overflow Question ##[Animated sorted bar chart with bars overtaking each ##other](https://stackoverflow.com/questions/53162821/animated-sorted-bar-cha##rt-with-bars-overtaking-each-other)
+**Disclaimer:** The code used here is heaving borrowed (*You can say, inspired and copied*) from the answers of this Stack Overflow Question [Animated sorted bar chart with bars overtaking each other](https://stackoverflow.com/questions/53162821/animated-sorted-bar-chart-with-bars-overtaking-each-other)
 
 ### Final Output (GIF):
 

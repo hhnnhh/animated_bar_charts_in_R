@@ -88,14 +88,15 @@ ganim <- ggplot(gnames_formatted, aes(rank, group = Vorname,
 animate(ganim, 400, fps = 20,  width = 1200, height = 1000, 
         renderer = gifski_renderer("gganim_girlname.gif")) 
 
-# For MP4
-devtools::install_github("leonawicz/mapmate")
-library(mapmate)
+# For MP4 --> not working yet 11.12.2019
 
-animate(anim, 200, fps = 20,  width = 1200, height = 1000, 
-        renderer = ffmpeg_renderer()) -> for_mp4
-
-anim_save("animation.mp4", animation = for_mp4 )
+# devtools::install_github("leonawicz/mapmate")
+# library(mapmate)
+# 
+# animate(anim, 200, fps = 20,  width = 1200, height = 1000, 
+#         renderer = ffmpeg_renderer()) -> for_mp4
+# 
+# anim_save("animation.mp4", animation = for_mp4 )
 
 write.csv(bnames,"boys2012_2018.csv")
 write.csv(gnames,"girls2012_2018.csv")
