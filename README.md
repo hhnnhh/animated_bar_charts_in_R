@@ -1,5 +1,13 @@
 # animated_bar_charts_in_R
 
+animated bar chart source code by www.github.com/amrrs
+names data provided by https://daten.berlin.de/
+names data chart: idea and concept, data preparation and analysis: https://github.com/hhnnhh (Hannah Bohle)
+1.11.2019
+
+
+## Read.me by amrrs: 
+
 The goal of this project is explain how to build Animated Bar Charts in R (which is kinda trending on Social Media these days)
 
 **Disclaimer:** The code used here is heaving borrowed (*You can say, inspired and copied*) from the answers of this Stack Overflow Question [Animated sorted bar chart with bars overtaking each other](https://stackoverflow.com/questions/53162821/animated-sorted-bar-chart-with-bars-overtaking-each-other)

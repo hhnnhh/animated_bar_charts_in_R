@@ -1,6 +1,8 @@
 library(tidyverse)
 library(gganimate)
 
+
+
 setwd("C:/Users/hanna/Dropbox/R_wissen/animated_bar_charts_in_R/data/")
 list.files()
 getwd()
@@ -19,6 +21,12 @@ gnames <- list.files(pattern = '^girls') %>%
 
 #rename the column x with freq for "frequency"
 names(gnames)[names(gnames)=='x'] <- 'freq'
+
+#frequency of "MIRA" (row 100) in year 2016 is manually changed from 164 to 165, because there is also
+# Marlene with 164 usages in 2016, and the barplot is therefore overlapping for those names
+# same with "Anna" and "Emma", Emma is changed from 305 to 306
+gnames[100, "freq"] <- 165
+gnames[87, "freq"] <-306
 
 #reformat gnames 
 gnames_formatted <- gnames %>%
@@ -40,8 +48,8 @@ ganim <- ggplot(gnames_formatted, aes(rank, group = Vorname,
   geom_tile(aes(y = freq/2,
                 height = freq,
                 width = 0.9), alpha = 0.8, color = NA) +
-  geom_text(aes(y = 0, label = paste(Vorname, " "), size= 200), vjust = 0.2, hjust = 1) +
-  geom_text(aes(y=freq,label = Value_lbl, hjust=0, size = 200)) +
+  geom_text(aes(y = 0, label = paste(Vorname, " ")), vjust = 0.2, hjust = 1, fontface="bold", size=7) +
+  geom_text(aes(y=freq,label = Value_lbl, hjust=0)) +
   coord_flip(clip = "off", expand = FALSE) +
   scale_y_continuous(labels = scales::comma) +
   scale_x_reverse() +
@@ -61,14 +69,14 @@ ganim <- ggplot(gnames_formatted, aes(rank, group = Vorname,
         panel.grid.minor.x = element_line( size=.1, color="grey" ),
         plot.title=element_text(size=25, hjust=0.5, face="bold", colour="grey", vjust=-1),
         plot.subtitle=element_text(size=18, hjust=0.5, face="italic", color="grey"),
-        plot.caption =element_text(size=8, hjust=0.5, face="italic", color="grey"),
+        plot.caption =element_text(size=18, hjust=0.5, face="italic", color="grey"),
         plot.background=element_blank(),
        plot.margin = margin(2,2, 2, 4, "cm")) +
   transition_states(year, transition_length = 4, state_length = 1) +
   view_follow(fixed_x = TRUE)  +
-  labs(title = 'Girls in Berlin: Most frequent first names for year : {closest_state}',  
-       subtitle  =  "Top 20 Names",
-       caption  = "frequency of first names in Berlin | Data Source: https://daten.berlin.de/ | animation plot: amrrs | names plot: Hannah Bohle") 
+  labs(title = 'GIRL NAMES in Berlin, for year : {closest_state}',  
+       subtitle  =  "20 most frequent names",
+       caption  = "frequency of first names in Berlin | Data Source: https://daten.berlin.de/ | animation plot: github.com/amrrs | names plot: github.com/hhnnhh") 
 
 # For GIF
 #install.packages("gifski")
@@ -76,7 +84,8 @@ ganim <- ggplot(gnames_formatted, aes(rank, group = Vorname,
 #install.packages("png")
 #library(png)
 
-animate(ganim, 200, fps = 20,  width = 1200, height = 1000, 
+#I changed the number of frames from 200 to 400 to make the chart slower
+animate(ganim, 400, fps = 20,  width = 1200, height = 1000, 
         renderer = gifski_renderer("gganim_girlname.gif")) 
 
 # For MP4
@@ -87,3 +96,6 @@ animate(anim, 200, fps = 20,  width = 1200, height = 1000,
         renderer = ffmpeg_renderer()) -> for_mp4
 
 anim_save("animation.mp4", animation = for_mp4 )
+
+write.csv(bnames,"boys2012_2018.csv")
+write.csv(gnames,"girls2012_2018.csv")
