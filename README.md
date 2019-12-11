@@ -1,8 +1,8 @@
 # animated_bar_charts_in_R
 
-animated bar chart source code by www.github.com/amrrs
-names data provided by https://daten.berlin.de/
-names data chart: idea and concept, data preparation and analysis: https://github.com/hhnnhh (Hannah Bohle)
++ animated bar chart source code by www.github.com/amrrs
++ names data provided by https://daten.berlin.de/
++ names data chart: idea and concept, data preparation and analysis: https://github.com/hhnnhh (Hannah Bohle)
 
 
 ## Read.me by amrrs: 
