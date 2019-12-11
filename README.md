@@ -14,11 +14,12 @@ The goal of this project is explain how to build Animated Bar Charts in R (which
 
 ### Final Output (GIF):
 
-![GIF](gganim.gif)
+![GIF](gganim_boyname.gif)
+![GIF](gganim_girlname.gif)
 
 ### Codes
 
-+ `gdp_data_cleanup.R` - Cleaning up the data downloaded from WorldBank Data Site
++ `names_data_preparation.R` - Cleaning up the data downloaded from "WorldBank Data Site "Open Data Berlin"
 + `animated_bar_plot_in_R.R` - Building Animated Bar Plots 
 
 
@@ -72,5 +73,5 @@ loaded via a namespace (and not attached):
 
 ### Data Source:
 
-The origin input data (`csv`) has been downloaded from [databank.worldbank.org](https://databank.worldbank.org/data/reports.aspx?source=2&series=NY.GDP.MKTP.CD&country=#)
+The origin input data (`csv`) has been downloaded from [Berlin Open Data](https://daten.berlin.de/)
 
